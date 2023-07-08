@@ -1,0 +1,11 @@
+@import './../../../../mixins';
+
+.container {
+    @include flex(center, center);
+    flex-direction: column;
+}
+
+app-authors {
+    margin-top: 3rem;
+    width: 100%;
+}

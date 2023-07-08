@@ -1,0 +1,12 @@
+@import './../../../../mixins';
+
+.content {
+    @include flex(space-between);
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+app-author {
+    display: block;
+    flex-basis: 23%;
+}

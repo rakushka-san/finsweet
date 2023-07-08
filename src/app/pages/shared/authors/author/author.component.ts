@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-author',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./author.component.scss']
 })
 export class AuthorComponent {
-
+    @Input() imgSrc: string = "";
+    @Input() name: string = "";
+    @Input() position: string = "";
+    @Input() company: string = "";
 }
