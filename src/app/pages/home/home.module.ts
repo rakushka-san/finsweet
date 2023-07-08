@@ -10,6 +10,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ChooseCategoryComponent } from './choose-category/choose-category.component';
 import { SpecialComponent } from './special/special.component';
 import { AuthorsListComponent } from './authors-list/authors-list.component';
+import { FeaturedInComponent } from './featured-in/featured-in.component';
 
 import { CategoryComponent } from './../shared/categories/category/category.component';
 import { AuthorsComponent } from './../shared/authors/authors.component';
@@ -32,6 +33,7 @@ import { AuthorDateComponent } from './../shared/author-date/author-date.compone
     CategoryComponent,
     AuthorsComponent,
     AuthorComponent,
+    FeaturedInComponent
   ],
   imports: [
     CommonModule, BrowserModule
