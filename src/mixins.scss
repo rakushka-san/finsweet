@@ -1,0 +1,35 @@
+@mixin bodyTypography1 {
+    font-size: 1rem;
+    line-height: 1.75rem;
+}
+
+@mixin bodyTypography2 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+@mixin buttonTypography {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+@mixin buttonHover($color) {
+    &:hover {
+        background-color: darken($color, 10);
+    }
+}
+
+@mixin captionTypography {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: 0.1875rem;
+    text-transform: uppercase;
+}
+
+@mixin flex($horizontal: flex-start, $vertical: flex-start) {
+    display: flex;
+    justify-content: $horizontal;
+    align-items: $vertical;
+}

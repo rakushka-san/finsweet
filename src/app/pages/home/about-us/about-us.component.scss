@@ -1,0 +1,41 @@
+@import './../../../../mixins';
+@import './../../../../colors';
+
+.container {
+    @include flex(flex-end, flex-end);
+    flex-direction: column;
+}
+
+.shape {
+    width: 83%;
+    height: 1.5rem;
+    background: linear-gradient(to right, $colorYellow 0 73%, $colorPurple 73% 100%);
+}
+
+.content {
+    width: 100%;
+    background-color: $colorLavender;
+    padding: 6rem 5rem;
+    @include flex(space-between);
+
+    .column {
+        width: 45%;
+    }
+
+    h3, h4 {
+        margin-top: 1.5rem;
+    }
+
+    .intro {
+        margin-top: 1rem;
+        color: $colorMediumGray;
+    }
+
+    a {
+        margin-top: 1rem;
+        font-family: 'Sen';
+        font-size: 1.125rem;
+        font-weight: 700;
+        line-height: 2rem;
+    }
+}

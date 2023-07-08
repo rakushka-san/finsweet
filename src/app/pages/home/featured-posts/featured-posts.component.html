@@ -1,0 +1,28 @@
+<section>
+    <div class="container">
+        <div class="featured">
+            <h3>Featured Post</h3>
+
+            <div class="content">
+                <img src="./../../../../assets/img/post_img.jpg" alt="Post Image">
+                <app-author-date [author]="exampleAuthor" [date]="exampleDate"></app-author-date>
+                <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</h4>
+                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                <button>Read More ></button>
+            </div>
+        </div>
+
+        <div class="all">
+            <div class="heading">
+                <h3>All Posts</h3>
+                <a routerLink="">View All</a>
+            </div>
+            <div class="content">
+                <app-post [author]="exampleAuthor" [date]="exampleDate" [title]="exampleTitle"></app-post>
+                <app-post [author]="exampleAuthor" [date]="exampleDate" [title]="exampleTitle"></app-post>
+                <app-post [author]="exampleAuthor" [date]="exampleDate" [title]="exampleTitle"></app-post>
+                <app-post [author]="exampleAuthor" [date]="exampleDate" [title]="exampleTitle"></app-post>
+            </div>
+        </div>
+    </div>
+</section>

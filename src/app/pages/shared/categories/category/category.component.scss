@@ -1,0 +1,14 @@
+@import './../../../../../colors';
+
+.item {
+    padding: 2rem;
+    border: 1px solid  rgba($colorMediumGray, 0.1);
+
+    p {
+        color: $colorMediumGray;
+    }
+
+    &:hover {
+        background-color: $colorYellow;
+    }
+}
