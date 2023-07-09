@@ -2,6 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
+import { CategoryComponent } from './../shared/categories/category/category.component';
+import { AuthorsComponent } from './../shared/authors/authors.component';
+import { AuthorComponent } from './../shared/authors/author/author.component';
+import { CategoriesComponent } from './../shared/categories/categories.component';
+import { AuthorDateComponent } from './../shared/author-date/author-date.component';
+import { JoinTeamComponent } from '../shared/join-team/join-team.component';
+
 import { HomeComponent } from './home.component';
 import { HomeHeroComponent } from './home-hero/home-hero.component';
 import { FeaturedPostsComponent } from './featured-posts/featured-posts.component';
@@ -11,12 +18,6 @@ import { ChooseCategoryComponent } from './choose-category/choose-category.compo
 import { SpecialComponent } from './special/special.component';
 import { AuthorsListComponent } from './authors-list/authors-list.component';
 import { FeaturedInComponent } from './featured-in/featured-in.component';
-
-import { CategoryComponent } from './../shared/categories/category/category.component';
-import { AuthorsComponent } from './../shared/authors/authors.component';
-import { AuthorComponent } from './../shared/authors/author/author.component';
-import { CategoriesComponent } from './../shared/categories/categories.component';
-import { AuthorDateComponent } from './../shared/author-date/author-date.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
@@ -35,7 +36,8 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
     AuthorsComponent,
     AuthorComponent,
     FeaturedInComponent,
-    TestimonialsComponent
+    TestimonialsComponent,
+    JoinTeamComponent
   ],
   imports: [
     CommonModule, BrowserModule

@@ -1,0 +1,20 @@
+@import './../../../../mixins';
+
+.container {
+    @include flex(center, center);
+}
+
+.content {
+    @include flex(center, center);
+    flex-direction: column;
+    width: 33%;
+    text-align: center;
+
+    p {
+        margin-top: 1rem;
+    }
+    
+    button {
+        margin-top: 2rem;
+    }
+}
