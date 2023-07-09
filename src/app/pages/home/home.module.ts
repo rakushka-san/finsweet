@@ -17,6 +17,7 @@ import { AuthorsComponent } from './../shared/authors/authors.component';
 import { AuthorComponent } from './../shared/authors/author/author.component';
 import { CategoriesComponent } from './../shared/categories/categories.component';
 import { AuthorDateComponent } from './../shared/author-date/author-date.component';
+import { TestimonialsComponent } from './testimonials/testimonials.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AuthorDateComponent } from './../shared/author-date/author-date.compone
     CategoryComponent,
     AuthorsComponent,
     AuthorComponent,
-    FeaturedInComponent
+    FeaturedInComponent,
+    TestimonialsComponent
   ],
   imports: [
     CommonModule, BrowserModule
