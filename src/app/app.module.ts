@@ -4,6 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './pages/home/home.module';
 import { BlogModule } from './pages/blog/blog.module';
+import { PrivacyPolicyModule } from './pages/privacy-policy/privacy-policy.module';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -12,11 +14,12 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
+    FooterComponent
   ],
   imports: [
     HomeModule,
     BlogModule,
+    PrivacyPolicyModule,
     BrowserModule,
     AppRoutingModule
   ],
