@@ -5,12 +5,16 @@ import { BlogComponent } from './blog.component';
 import { SharedModule } from '../shared/shared.module';
 
 import { FeaturedPostComponent } from './featured-post/featured-post.component';
+import { AllPostsComponent } from './all-posts/all-posts.component';
+import { PostComponent } from './all-posts/post/post.component';
 
 
 @NgModule({
   declarations: [
     BlogComponent,
     FeaturedPostComponent,
+    AllPostsComponent,
+    PostComponent
   ],
   imports: [
     CommonModule,

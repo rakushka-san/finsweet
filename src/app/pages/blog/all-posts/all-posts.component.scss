@@ -1,0 +1,30 @@
+@import './../../../../mixins';
+@import './../../../../colors';
+
+section {
+    padding-top: 4rem;
+}
+
+.content {
+    margin-top: 2rem;
+    border-top: 1px solid rgba($colorMediumGray, 0.32);
+}
+
+.item {
+    margin-top: 4rem;
+}
+
+.controls {
+    @include flex(center, center);
+
+    margin-top: 4rem;
+
+    & > * {
+        margin-left: 1rem;
+
+        &:first-child {
+            color: $colorMediumGray;
+            margin-left: 0;
+        }
+    }
+}
