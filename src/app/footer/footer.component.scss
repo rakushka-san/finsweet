@@ -12,7 +12,7 @@ footer {
 }
 
 .navigation {
-    @include flex(start, center)
+    @include flex(flex-start, center)
 }
 
 nav {
