@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { AppRoutingModule } from './../../app-routing.module';
+
 import { CategoryComponent } from './../shared/categories/category/category.component';
 import { AuthorsComponent } from './../shared/authors/authors.component';
 import { AuthorComponent } from './../shared/authors/author/author.component';
@@ -18,7 +20,8 @@ import { JoinTeamComponent } from '../shared/join-team/join-team.component';
     JoinTeamComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports: [
     AuthorDateComponent,
