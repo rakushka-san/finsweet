@@ -1,0 +1,16 @@
+@import './../../../../mixins';
+@import './../../../../colors';
+
+section {
+    padding: 5rem 0;
+    background-color: $colorLavender;
+}
+
+.container {
+    @include flex(center, center);
+    flex-direction: column;
+}
+
+p {
+    color: rgba($colorBlack, 0.6);
+}

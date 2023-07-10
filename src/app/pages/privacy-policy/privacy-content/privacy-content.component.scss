@@ -1,0 +1,24 @@
+@import './../../../../colors';
+
+.content {
+    padding: 0 16rem;
+
+    
+}
+
+article {
+    margin-top: 2rem;
+    
+    p {
+        color: $colorDarkGray;
+        margin-top: 1.5rem;
+    }
+}
+
+.main {
+    margin-top: 0;
+
+    p {
+        margin-top: 2rem;
+    }
+}
