@@ -1,0 +1,36 @@
+@import './../../../../mixins';
+@import './../../../../colors';
+
+.container {
+    @include flex(space-between);
+}
+
+section {
+    padding: 5rem 0;
+    background-color: $colorLavender;
+}
+
+.content {
+    flex-basis: 50%;
+
+    h3 {
+        margin-top: 1.25rem;
+    }
+
+    app-author-date {
+        margin-top: 1rem;
+    }
+
+    .intro {
+        margin-top: 1rem;
+        color: $colorMediumGray;
+    }
+
+    button {
+        margin-top: 2rem;
+    }
+}
+
+img {
+    flex-basis: 40%;
+}
