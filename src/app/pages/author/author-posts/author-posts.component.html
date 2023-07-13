@@ -1,0 +1,17 @@
+<section>
+  <div class="container">
+    <div class="wrapper">
+      <h2>My Posts</h2>
+      <div class="posts">
+        <div class="item" *ngFor="let post of posts">
+          <app-post
+            [imgSrc]="post.imgSrc"
+            [category]="post.category"
+            [title]="post.title"
+            [description]="post.description"
+          ></app-post>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

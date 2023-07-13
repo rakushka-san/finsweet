@@ -6,21 +6,15 @@ import { SharedModule } from '../shared/shared.module';
 
 import { FeaturedPostComponent } from './featured-post/featured-post.component';
 import { AllPostsComponent } from './all-posts/all-posts.component';
-import { PostComponent } from '../shared/post/post.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
-
 
 @NgModule({
   declarations: [
     BlogComponent,
     FeaturedPostComponent,
     AllPostsComponent,
-    PostComponent,
-    AllCategoriesComponent
+    AllCategoriesComponent,
   ],
-  imports: [
-    CommonModule,
-    SharedModule
-  ]
+  imports: [CommonModule, SharedModule],
 })
-export class BlogModule { }
+export class BlogModule {}
