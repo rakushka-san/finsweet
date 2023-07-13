@@ -1,0 +1,30 @@
+@import "./../../../../mixins";
+@import "./../../../../colors";
+
+section {
+  padding-top: 0;
+}
+
+.content {
+  padding: 8rem 6.75rem 4rem;
+  background-color: $colorLavender;
+
+  @include flex(space-between);
+}
+
+.column {
+  margin-left: 2rem;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  h4 {
+    margin-top: 1.5rem;
+  }
+
+  .description {
+    margin-top: 1rem;
+    color: $colorMediumGray;
+  }
+}
