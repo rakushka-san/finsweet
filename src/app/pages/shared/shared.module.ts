@@ -11,6 +11,7 @@ import { AuthorDateComponent } from './../shared/author-date/author-date.compone
 import { JoinTeamComponent } from '../shared/join-team/join-team.component';
 import { PostComponent } from '../shared/post/post.component';
 import { SocialsComponent } from './socials/socials.component';
+import { AuthorsListComponent } from './authors-list/authors-list.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SocialsComponent } from './socials/socials.component';
     JoinTeamComponent,
     PostComponent,
     SocialsComponent,
+    AuthorsListComponent,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
@@ -33,6 +35,7 @@ import { SocialsComponent } from './socials/socials.component';
     JoinTeamComponent,
     PostComponent,
     SocialsComponent,
+    AuthorsListComponent,
   ],
 })
 export class SharedModule {}

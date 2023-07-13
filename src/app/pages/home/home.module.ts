@@ -11,7 +11,6 @@ import { FeaturedPostsComponent } from './featured-posts/featured-posts.componen
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ChooseCategoryComponent } from './choose-category/choose-category.component';
 import { SpecialComponent } from './special/special.component';
-import { AuthorsListComponent } from './authors-list/authors-list.component';
 import { FeaturedInComponent } from './featured-in/featured-in.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { PostMinComponent } from './featured-posts/post-min/post-min.component';
@@ -24,7 +23,6 @@ import { PostMinComponent } from './featured-posts/post-min/post-min.component';
     AboutUsComponent,
     ChooseCategoryComponent,
     SpecialComponent,
-    AuthorsListComponent,
     FeaturedInComponent,
     TestimonialsComponent,
     PostMinComponent,

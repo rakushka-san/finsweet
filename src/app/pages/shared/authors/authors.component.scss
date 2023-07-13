@@ -1,12 +1,13 @@
-@import './../../../../mixins';
+@import "./../../../../mixins";
 
 .content {
-    @include flex(space-between);
-    flex-direction: row;
-    flex-wrap: wrap;
+  @include flex(space-between);
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 app-author {
-    display: block;
-    flex-basis: 23%;
+  margin-top: 2rem;
+  display: block;
+  flex-basis: 23%;
 }
