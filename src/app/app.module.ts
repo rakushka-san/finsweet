@@ -6,26 +6,24 @@ import { HomeModule } from './pages/home/home.module';
 import { BlogModule } from './pages/blog/blog.module';
 import { ContactModule } from './pages/contact/contact.module';
 import { PrivacyPolicyModule } from './pages/privacy-policy/privacy-policy.module';
+import { AuthorModule } from './pages/author/author.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    FooterComponent,
-  ],
+  declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
     HomeModule,
     BlogModule,
     ContactModule,
     PrivacyPolicyModule,
+    AuthorModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
