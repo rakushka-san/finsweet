@@ -1,38 +1,30 @@
-@import './../../../../../mixins';
-@import './../../../../../colors';
+@import "./../../../../../mixins";
+@import "./../../../../../colors";
 
 .item {
-    @include flex(center, center);
-    flex-direction: column;
-    padding: 2.5rem;
-    background-color: $colorLightGray;
+  @include flex(center, center);
+  flex-direction: column;
+  padding: 2.5rem;
+  background-color: $colorLightGray;
 
-    &:hover {
-        background-color: $colorLightYellow;
-    }
+  &:hover {
+    background-color: $colorLightYellow;
+  }
 
-    & > img {
-        border-radius: 90px;
-    }
+  & > img {
+    border-radius: 90px;
+  }
 
-    h4 {
-        margin-top: 1.25rem;
-    }
+  h4 {
+    margin-top: 1.25rem;
+  }
 
-    p {
-        @include bodyTypography2;
-        color: $colorMediumGray;
-    }
+  p {
+    @include bodyTypography2;
+    color: $colorMediumGray;
+  }
 
-    .socials {
-        margin-top: 1.25rem;
-    }
-}
-
-.socials a {
-    margin-left: 1rem;
-
-    &:first-child {
-        margin-left: 0;
-    }
+  .socials-wrapper {
+    margin-top: 1.25rem;
+  }
 }
