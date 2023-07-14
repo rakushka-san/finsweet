@@ -1,0 +1,16 @@
+<section>
+  <div class="container">
+    <h3>What to read next</h3>
+    <div class="content">
+      <div class="post" *ngFor="let post of posts">
+        <app-recommended-post
+          [imgSrc]="post.imgSrc"
+          [author]="post.author"
+          [date]="post.date"
+          [title]="post.title"
+          [description]="post.description"
+        ></app-recommended-post>
+      </div>
+    </div>
+  </div>
+</section>
