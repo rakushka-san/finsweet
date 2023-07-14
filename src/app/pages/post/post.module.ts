@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { PostComponent } from './post.component';
 import { PostHeadingComponent } from './post-heading/post-heading.component';
+import { PostContentComponent } from './post-content/post-content.component';
 
 @NgModule({
-  declarations: [PostComponent, PostHeadingComponent],
+  declarations: [PostComponent, PostHeadingComponent, PostContentComponent],
   imports: [CommonModule, RouterModule],
 })
 export class PostModule {}

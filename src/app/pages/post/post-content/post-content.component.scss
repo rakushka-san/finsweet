@@ -1,0 +1,54 @@
+@import "./../../../../colors";
+
+section {
+  padding-top: 4rem;
+}
+
+img {
+  width: 100%;
+}
+
+.wrapper {
+  margin-top: 1rem;
+  padding: 0 14rem;
+}
+
+article {
+  h3 {
+    margin-top: 3rem;
+  }
+
+  p {
+    margin-top: 1.5rem;
+
+    color: $colorMediumGray;
+
+    &:first-of-type {
+      margin-top: 1rem;
+    }
+  }
+
+  ul {
+    margin-top: 1.5rem;
+
+    list-style: none;
+  }
+
+  li {
+    $pointerSize: 0.31rem;
+
+    padding-left: calc($pointerSize + 0.75rem);
+
+    font-family: "Sen", sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    color: rgba($colorBlack, 0.78);
+
+    background-image: url("./../../../../assets/img/pointer.svg");
+    background-position: 0 50%;
+    background-size: $pointerSize $pointerSize;
+    background-repeat: no-repeat;
+  }
+}
