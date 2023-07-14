@@ -22,6 +22,10 @@ $circleDiameter: 4.625rem;
 .image {
   position: relative;
 
+  img {
+    display: block;
+  }
+
   .shape {
     width: $circleDiameter;
     height: $circleDiameter;
