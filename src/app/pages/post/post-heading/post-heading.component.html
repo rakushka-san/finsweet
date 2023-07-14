@@ -1,0 +1,19 @@
+<section>
+  <div class="container">
+    <div class="wrapper">
+      <div class="author">
+        <img [src]="profilePictureSrc" alt="Profile Picture" />
+        <div class="profile">
+          <!-- в линке черновик на будущее -->
+          <a [routerLink]="['/author/authorId']">{{ authorName }}</a>
+          <p>Posted on {{ date | date : "d MMMM y" }}</p>
+        </div>
+      </div>
+      <h2>{{ title }}</h2>
+      <div class="category">
+        <img [src]="categoryIconSrc" alt="Category Icon" />
+        <h5>{{ category }}</h5>
+      </div>
+    </div>
+  </div>
+</section>
