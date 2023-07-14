@@ -8,6 +8,7 @@ import { ContactModule } from './pages/contact/contact.module';
 import { PrivacyPolicyModule } from './pages/privacy-policy/privacy-policy.module';
 import { AuthorModule } from './pages/author/author.module';
 import { AboutUsModule } from './pages/about-us/about-us.module';
+import { PostModule } from './pages/post/post.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -16,14 +17,15 @@ import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [AppComponent, HeaderComponent, FooterComponent],
   imports: [
+    BrowserModule,
+    AppRoutingModule,
     HomeModule,
     BlogModule,
     ContactModule,
     PrivacyPolicyModule,
     AuthorModule,
     AboutUsModule,
-    BrowserModule,
-    AppRoutingModule,
+    PostModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

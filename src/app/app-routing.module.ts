@@ -6,6 +6,7 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
 import { ContactComponent } from './pages/contact/contact.component';
 import { AuthorComponent } from './pages/author/author.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { PostComponent } from './pages/post/post.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'author', component: AuthorComponent },
   { path: 'about-us', component: AboutUsComponent },
+  { path: 'post', component: PostComponent },
 ];
 
 @NgModule({
