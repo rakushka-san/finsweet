@@ -1,27 +1,27 @@
-@import './../../../../mixins';
-@import './../../../../colors';
+@import "./../../../../mixins";
+@import "./../../../../colors";
 
 .item {
-    @include flex(flex-start, center);
+  @include flex(flex-start, center);
 
-    img {
-        flex-basis: 38%;
+  img {
+    width: 38%;
+  }
+
+  .info {
+    margin-left: 2rem;
+
+    .caption {
+      color: $colorPurple;
     }
 
-    .info {
-        margin-left: 2rem;
-
-        .caption {
-            color: $colorPurple;
-        }
-
-        h3 {
-            margin-top: 1.25rem;
-        }
-
-        .description {
-            margin-top: 1rem;
-            color: $colorMediumGray;
-        }
+    h3 {
+      margin-top: 1.25rem;
     }
+
+    .description {
+      margin-top: 1rem;
+      color: $colorMediumGray;
+    }
+  }
 }
