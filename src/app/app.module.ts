@@ -9,6 +9,7 @@ import { PrivacyPolicyModule } from './pages/privacy-policy/privacy-policy.modul
 import { AuthorModule } from './pages/author/author.module';
 import { AboutUsModule } from './pages/about-us/about-us.module';
 import { PostModule } from './pages/post/post.module';
+import { CategoryModule } from './pages/category/category.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -26,6 +27,7 @@ import { FooterComponent } from './footer/footer.component';
     AuthorModule,
     AboutUsModule,
     PostModule,
+    CategoryModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

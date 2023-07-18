@@ -7,6 +7,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { AuthorComponent } from './pages/author/author.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PostComponent } from './pages/post/post.component';
+import { CategoryComponent } from './pages/category/category.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'author', component: AuthorComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'post', component: PostComponent },
+  { path: 'category', component: CategoryComponent },
 ];
 
 @NgModule({
