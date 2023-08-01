@@ -1,16 +1,15 @@
 export interface IAuthor {
-  // _id: string;
+  _id: string;
   name: string;
-  imgSrc: string;
-  // photoSrc: string;
+  photoSrc: string;
   position: string;
   company: string;
-  // blogDescription: string;
-  // region: string;
-  // socials: {
-  //   facebook: string;
-  //   twitter: string;
-  //   instagram: string;
-  //   linkedIn: string;
-  // };
+  blogDescription: string;
+  region: string;
+  socials: {
+    facebook: string;
+    twitter: string;
+    instagram: string;
+    linkedIn: string;
+  };
 }

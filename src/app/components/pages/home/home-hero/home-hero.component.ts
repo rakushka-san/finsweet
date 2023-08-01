@@ -12,40 +12,16 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./home-hero.component.scss'],
 })
 export class HomeHeroComponent implements OnInit {
-  featuredPost: IPost = {
-    title: '',
-    description: '',
-    category: '',
-    author: '',
-    date: new Date(),
-    imgSrc: '',
-  };
+  featuredPost!: IPost;
 
   categoryName: string = '';
   authorName: string = '';
 
-  constructor(
-    private postsService: PostsService,
-    private authorsService: AuthorsService,
-    private categoriesService: CategoriesService
-  ) {}
+  constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.postsService
-      .getPosts()
-      .pipe(
-        mergeMap((posts) => {
-          this.featuredPost = posts[0];
-
-          return forkJoin([
-            this.authorsService.getAuthor(this.featuredPost.author),
-            this.categoriesService.getCategory(this.featuredPost.category),
-          ]);
-        })
-      )
-      .subscribe(([author, category]) => {
-        this.authorName = author.name;
-        this.categoryName = category.name;
-      });
+    this.postsService.getPosts().subscribe((posts) => {
+      this.featuredPost = posts[0];
+    });
   }
 }

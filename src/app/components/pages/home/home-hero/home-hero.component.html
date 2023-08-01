@@ -11,20 +11,22 @@
       <p class="caption">
         Posted on
         <span [routerLink]="'category/' + featuredPost.category">{{
-          categoryName
+          featuredPost.categoryName
         }}</span>
       </p>
       <h1>{{ featuredPost.title }}</h1>
       <p class="info">
         By
-        <a [routerLink]="'author/' + featuredPost.author">{{ authorName }}</a> |
+        <a [routerLink]="'author/' + featuredPost.author">{{
+          featuredPost.authorName
+        }}</a>
+        |
         {{ featuredPost.date | date : "MMM dd, yyyy" }}
       </p>
       <p class="intro">
         {{ featuredPost.description }}
       </p>
-      <!-- <button [routerLink]="'post/' + featuredPost._id">Read More ></button> -->
-      <button>Read More ></button>
+      <button [routerLink]="'post/' + featuredPost._id">Read More ></button>
     </div>
   </div>
 </section>
