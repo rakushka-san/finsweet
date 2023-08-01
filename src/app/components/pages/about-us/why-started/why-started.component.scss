@@ -1,0 +1,39 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+$circleDiameter: 4.625rem;
+
+.container {
+  @include flex(flex-start, center);
+}
+
+.content {
+  margin-left: 4rem;
+
+  h5 {
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+}
+
+.image {
+  position: relative;
+
+  img {
+    display: block;
+  }
+
+  .shape {
+    width: $circleDiameter;
+    height: $circleDiameter;
+    background-color: $colorPurple;
+    border-radius: 90px;
+
+    position: absolute;
+    left: 6.69rem;
+    bottom: calc(($circleDiameter/2) * -1);
+  }
+}

@@ -1,0 +1,50 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+.container {
+  @include flex(space-between);
+}
+
+.featured {
+  flex-basis: 57.5%;
+
+  .content {
+    margin-top: 2rem;
+    border: 1px solid rgba($colorMediumGray, 0.1);
+    padding: 2rem;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .wrapper {
+    margin-top: 2rem;
+  }
+
+  h4 {
+    margin-top: 1rem;
+  }
+
+  p {
+    margin-top: 1rem;
+    color: $colorMediumGray;
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}
+
+.all {
+  margin-left: 2rem;
+  flex-basis: 40%;
+
+  .content {
+    margin-top: 2rem;
+  }
+
+  .heading {
+    @include flex(space-between, center);
+  }
+}

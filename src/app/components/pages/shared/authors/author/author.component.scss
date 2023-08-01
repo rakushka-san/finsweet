@@ -1,0 +1,29 @@
+@import "./../../../../../../assets/scss/mixins";
+@import "./../../../../../../assets/scss/colors";
+.item {
+  @include flex(center, center);
+  flex-direction: column;
+  padding: 2.5rem;
+  background-color: $colorLightGray;
+
+  &:hover {
+    background-color: $colorLightYellow;
+  }
+
+  & > img {
+    border-radius: 90px;
+  }
+
+  h4 {
+    margin-top: 1.25rem;
+  }
+
+  p {
+    @include bodyTypography2;
+    color: $colorMediumGray;
+  }
+
+  .socials-wrapper {
+    margin-top: 1.25rem;
+  }
+}

@@ -1,0 +1,52 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+.wrapper {
+  padding: 0 16rem;
+}
+
+.author {
+  @include flex(flex-start, center);
+
+  img {
+    border-radius: 90px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .profile {
+    margin-left: 1rem;
+
+    a {
+      font-family: "Sen", sans-serif;
+      font-weight: 700;
+      font-size: 1.75rem;
+      line-height: 2.5rem;
+      letter-spacing: -0.0625rem;
+
+      color: rgba($colorPurple, 0.87);
+    }
+
+    p {
+      color: $colorMediumGray;
+    }
+  }
+}
+
+h2 {
+  margin-top: 2rem;
+}
+
+.category {
+  @include flex(flex-start, center);
+
+  margin-top: 2rem;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  h5 {
+    margin-left: 0.5rem;
+  }
+}

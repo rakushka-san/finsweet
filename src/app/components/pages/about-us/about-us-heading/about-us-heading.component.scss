@@ -1,0 +1,53 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+section {
+  padding-top: 5rem;
+}
+
+.container {
+  background-image: url("./../../../../../assets/img/about-us-background.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  padding-left: 6.75rem;
+}
+
+.header {
+  @include flex(space-between, center);
+
+  .caption-block {
+    padding: 4rem;
+    background-color: $colorLight;
+
+    flex-basis: 53%;
+  }
+
+  & > p {
+    padding: 0 2rem;
+    color: $colorDarkGray;
+
+    flex-basis: 47%;
+  }
+}
+
+.overview {
+  margin-top: 12.5rem;
+  padding: 2rem 3rem;
+  background-color: $colorYellow;
+  width: 53%;
+
+  @include flex(space-between);
+}
+
+.shape {
+  width: 74%;
+  height: 1.5rem;
+  background: linear-gradient(
+    to right,
+    $colorPurple 0 36%,
+    $colorYellow 36% 100%
+  );
+}

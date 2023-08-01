@@ -1,0 +1,79 @@
+@import "./../../../assets/scss/colors";
+@import "./../../../assets/scss/mixins";
+
+footer {
+  margin-top: 8rem;
+  background-color: $colorBlack;
+  padding: 3.5rem 0;
+}
+
+.links {
+  @include flex(space-between, center);
+}
+
+.navigation {
+  @include flex(flex-start, center);
+}
+
+nav {
+  @include flex(space-between);
+
+  a {
+    color: $colorLight;
+    margin-left: 1.5rem;
+  }
+}
+
+.subscribe {
+  margin-top: 3.5rem;
+  padding: 5rem 4rem;
+  background-color: rgba($colorLight, 0.05);
+  @include flex(space-between);
+
+  h3 {
+    color: $colorLight;
+  }
+
+  & > * {
+    flex: 1;
+  }
+
+  form {
+    margin-top: 0.25rem;
+    @include flex(flex-start, center);
+
+    input {
+      padding: 0.88rem 1.56rem;
+      width: 100%;
+      outline: none;
+      background: transparent;
+      border: 1px solid $colorDarkGray;
+      color: $colorLight;
+      @include bodyTypography1;
+
+      &::placeholder {
+        color: $colorMediumGray;
+        opacity: 1;
+      }
+    }
+
+    button {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.contacts {
+  margin-top: 3rem;
+  @include flex(space-between, center);
+
+  color: rgba($colorLight, 0.7);
+}
+
+.socials {
+  @include flex(space-between);
+
+  a {
+    margin-left: 1.67rem;
+  }
+}

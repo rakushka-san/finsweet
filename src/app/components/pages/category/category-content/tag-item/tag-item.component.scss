@@ -1,0 +1,20 @@
+@import "./../../../../../../assets/scss/mixins";
+@import "./../../../../../../assets/scss/colors";
+
+.item {
+  padding: 0.5rem 3rem;
+
+  border-radius: 1.75rem;
+  border: 2px solid $colorMediumGray;
+
+  @include flex(center, center);
+
+  p {
+    color: $colorMediumGray;
+    font-family: Sen;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem;
+  }
+}

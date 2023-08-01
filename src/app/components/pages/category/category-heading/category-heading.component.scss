@@ -1,0 +1,25 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+section {
+  padding: 5rem 0;
+  background-color: $colorLavender;
+}
+
+.container {
+  @include flex(center, center);
+  flex-direction: column;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.caption {
+  margin-top: 2rem;
+  font-weight: 500;
+
+  span {
+    cursor: pointer;
+  }
+}

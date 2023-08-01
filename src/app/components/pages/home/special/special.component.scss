@@ -1,0 +1,28 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+.background {
+  background-image: url("./../../../../../assets/img/special-background.jpg");
+  background-repeat: no-repeat;
+  padding-top: 7.5rem;
+  @include flex(flex-end, flex-end);
+}
+
+.content {
+  flex-basis: 55%;
+  background-color: $colorLight;
+  padding: 5rem;
+
+  h2 {
+    margin-top: 1.5rem;
+  }
+
+  .intro {
+    margin-top: 1rem;
+    color: $colorMediumGray;
+  }
+
+  button {
+    margin-top: 2rem;
+  }
+}

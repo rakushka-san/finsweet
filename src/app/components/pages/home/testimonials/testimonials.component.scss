@@ -1,0 +1,56 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+.content {
+  background-color: $colorLightYellow;
+  padding: 5.75rem 7rem;
+
+  @include flex;
+  flex-direction: row;
+
+  position: relative;
+}
+
+.intro {
+  flex-basis: 42%;
+  padding-right: 5rem;
+
+  h3 {
+    margin-top: 0.75rem;
+  }
+
+  .description {
+    margin-top: 1rem;
+  }
+}
+
+.feedback {
+  flex-basis: 58%;
+  padding-left: 6rem;
+  border-left: 1px solid rgba($colorMediumGray, 0.4);
+}
+
+.bottom {
+  margin-top: 7rem;
+  @include flex(space-between);
+
+  .profile {
+    @include flex(flex-start, center);
+
+    img {
+      border-radius: 90px;
+    }
+
+    .user {
+      margin-left: 1rem;
+    }
+  }
+
+  .controls {
+    @include flex(flex-start, center);
+
+    .back {
+      margin-left: 1.5rem;
+    }
+  }
+}

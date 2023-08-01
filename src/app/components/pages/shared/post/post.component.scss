@@ -1,0 +1,27 @@
+@import "./../../../../../assets/scss/mixins";
+@import "./../../../../../assets/scss/colors";
+
+.item {
+  @include flex(flex-start, center);
+
+  img {
+    width: 38%;
+  }
+
+  .info {
+    margin-left: 2rem;
+
+    .caption {
+      color: $colorPurple;
+    }
+
+    h3 {
+      margin-top: 1.25rem;
+    }
+
+    .description {
+      margin-top: 1rem;
+      color: $colorMediumGray;
+    }
+  }
+}
