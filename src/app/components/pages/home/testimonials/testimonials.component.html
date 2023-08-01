@@ -11,29 +11,30 @@
       </div>
       <div class="feedback">
         <h5>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {{ currentTestimonial.text }}
         </h5>
         <div class="bottom">
           <div class="profile">
             <img
-              src="./../../../../assets/img/Profile picture.jpg"
+              [src]="('apiUrl' | env) + currentTestimonial.authorPhoto"
               alt="Profile picture"
             />
             <div class="user">
-              <h5>Jonathan Vallem</h5>
-              <p>New York, USA</p>
+              <h5>{{ currentTestimonial.authorName }}</h5>
+              <p>{{ currentTestimonial.authorRegion }}</p>
             </div>
           </div>
           <div class="controls">
             <img
               src="./../../../../assets/img/Back button.svg"
               alt="Back button"
+              (click)="onBack()"
             />
             <img
               class="back"
               src="./../../../../assets/img/Next Button.svg"
               alt="Next button"
+              (click)="onNext()"
             />
           </div>
         </div>
