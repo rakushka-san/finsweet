@@ -1,7 +1,7 @@
 <div class="content">
   <app-category
     *ngFor="let category of categories"
-    [imgSrc]="category.imgSrc"
+    [imgSrc]="('apiUrl' | env) + category.imgSrc"
     [name]="category.name"
     [description]="category.description"
   ></app-category>
