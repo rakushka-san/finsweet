@@ -39,6 +39,7 @@ import { EnvironmentPipe } from './../../../pipes/environment.pipe';
     PostComponent,
     SocialsComponent,
     AuthorsListComponent,
+    EnvironmentPipe,
   ],
 })
 export class SharedModule {}

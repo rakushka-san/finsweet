@@ -1,14 +1,29 @@
-<section>
+<section
+  [style.background]="
+    'radial-gradient(80.99% 71.93% at 74.58% 0%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%), center / cover no-repeat url(' +
+    ('apiUrl' | env) +
+    featuredPost.imgSrc +
+    ')'
+  "
+>
   <div class="container">
     <div class="hero">
-      <p class="caption">Posted on <span>startup</span></p>
-      <h1>Step-by-step guide to choosing great font pairs</h1>
-      <p class="info">By <a routerLink="/">James West</a> | May 23, 2022</p>
-      <p class="intro">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident.
+      <p class="caption">
+        Posted on
+        <span [routerLink]="'category/' + featuredPost.category">{{
+          categoryName
+        }}</span>
       </p>
+      <h1>{{ featuredPost.title }}</h1>
+      <p class="info">
+        By
+        <a [routerLink]="'author/' + featuredPost.author">{{ authorName }}</a> |
+        {{ featuredPost.date | date : "MMM dd, yyyy" }}
+      </p>
+      <p class="intro">
+        {{ featuredPost.description }}
+      </p>
+      <!-- <button [routerLink]="'post/' + featuredPost._id">Read More ></button> -->
       <button>Read More ></button>
     </div>
   </div>
