@@ -12,7 +12,18 @@ export class FeaturedPostsComponent implements OnInit {
   exampleDate = new Date('2022-05-23');
   exampleTitle = '8 Figma design systems that you can download for free today.';
 
-  featuredPost!: IPost;
+  featuredPost: IPost = {
+    _id: '',
+    title: '',
+    description: '',
+    category: '',
+    categoryName: '',
+    author: '',
+    authorName: '',
+    date: new Date(),
+    imgSrc: '',
+    content: '',
+  };
   posts: IPost[] = [];
 
   constructor(private postsService: PostsService) {}

@@ -12,7 +12,18 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./home-hero.component.scss'],
 })
 export class HomeHeroComponent implements OnInit {
-  featuredPost!: IPost;
+  featuredPost: IPost = {
+    _id: '',
+    title: '',
+    description: '',
+    category: '',
+    categoryName: '',
+    author: '',
+    authorName: '',
+    date: new Date(),
+    imgSrc: '',
+    content: '',
+  };
 
   categoryName: string = '';
   authorName: string = '';
