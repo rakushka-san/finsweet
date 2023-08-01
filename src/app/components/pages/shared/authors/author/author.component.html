@@ -3,6 +3,11 @@
   <h4>{{ name }}</h4>
   <p>{{ position }} @{{ company }}</p>
   <div class="socials-wrapper">
-    <app-socials></app-socials>
+    <app-socials
+      [facebookLink]="socials.facebook"
+      [twitterLink]="socials.twitter"
+      [instagramLink]="socials.instagram"
+      [linkedinLink]="socials.linkedIn"
+    ></app-socials>
   </div>
 </div>

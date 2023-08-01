@@ -21,6 +21,7 @@
   p {
     @include bodyTypography2;
     color: $colorMediumGray;
+    text-align: center;
   }
 
   .socials-wrapper {

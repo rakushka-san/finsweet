@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IAuthor } from 'src/app/models/author';
+import { AuthorsService } from 'src/app/services/authors.service';
 
 @Component({
   selector: 'app-authors',
@@ -9,62 +10,13 @@ import { IAuthor } from 'src/app/models/author';
 export class AuthorsComponent implements OnInit {
   @Input() take: number = 0;
 
-  authorsSource: IAuthor[] = [];
-
-  // authorsSource: IAuthor[] = [
-  //   {
-  //     imgSrc: './../../../../../assets/img/person1.jpg',
-  //     name: 'Floyd Miles',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person2.jpg',
-  //     name: 'Dianne Russell',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person3.jpg',
-  //     name: 'Jenny Wilson',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person4.jpg',
-  //     name: 'Leslie Alexander',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person5.jpg',
-  //     name: 'Guy Hawkins',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person6.jpg',
-  //     name: 'Eleanor Pena',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person7.jpg',
-  //     name: 'Robert Fox',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/person8.jpg',
-  //     name: 'Jacob Jones',
-  //     position: 'Content Writer',
-  //     company: 'Company',
-  //   },
-  // ];
-
   authors: IAuthor[] = [];
 
+  constructor(private authorsService: AuthorsService) {}
+
   ngOnInit(): void {
-    this.authors = this.authorsSource.slice(0, this.take);
+    this.authorsService.getAuthors().subscribe((authors) => {
+      this.authors = authors.slice(0, this.take);
+    });
   }
 }
