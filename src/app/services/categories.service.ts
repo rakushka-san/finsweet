@@ -15,4 +15,8 @@ export class CategoriesService {
   getCategories(): Observable<ICategory[]> {
     return this.http.get<ICategory[]>(URL);
   }
+
+  getCategory(id: string): Observable<ICategory> {
+    return this.http.get<ICategory>(`${URL}/${id}`);
+  }
 }

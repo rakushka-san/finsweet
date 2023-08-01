@@ -12,9 +12,11 @@ const URL = `${environment.apiUrl}posts`;
 export class PostsService {
   constructor(private http: HttpClient) {}
 
-  getPosts(author: string, category: string): Observable<IPost[]> {
+  getPosts(author?: string, category?: string): Observable<IPost[]> {
     return this.http.get<IPost[]>(
-      `${URL}?author=${author}&category=${category}`
+      `${URL}?author=${author ? author : ''}&category=${
+        category ? category : ''
+      }`
     );
   }
 
