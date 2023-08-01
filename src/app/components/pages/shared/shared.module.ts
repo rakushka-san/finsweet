@@ -13,6 +13,8 @@ import { PostComponent } from '../shared/post/post.component';
 import { SocialsComponent } from './socials/socials.component';
 import { AuthorsListComponent } from './authors-list/authors-list.component';
 
+import { EnvironmentPipe } from './../../../pipes/environment.pipe';
+
 @NgModule({
   declarations: [
     AuthorDateComponent,
@@ -24,6 +26,7 @@ import { AuthorsListComponent } from './authors-list/authors-list.component';
     PostComponent,
     SocialsComponent,
     AuthorsListComponent,
+    EnvironmentPipe,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
