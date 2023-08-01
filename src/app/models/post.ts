@@ -1,8 +1,10 @@
 export interface IPost {
-  imgSrc: string;
-  category: string;
+  // _id: string;
   title: string;
   description: string;
+  category: string;
   author: string;
   date: Date;
+  imgSrc: string;
+  // content: string;
 }
