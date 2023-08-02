@@ -1,8 +1,12 @@
 <div class="content">
   <img [src]="imgSrc" alt="Post Image" />
   <div class="wrapper">
-    <app-author-date [author]="author" [date]="date"></app-author-date>
+    <app-author-date
+      [author]="authorName"
+      [id]="authorId"
+      [date]="date"
+    ></app-author-date>
   </div>
-  <h4>{{ title }}</h4>
+  <h4 [routerLink]="['/post', postId]">{{ title }}</h4>
   <p>{{ description }}</p>
 </div>

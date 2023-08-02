@@ -1,40 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/models/post';
+import { PostsService } from 'src/app/services/posts.service';
+import { RandomService } from 'src/app/services/random.service';
 
 @Component({
   selector: 'app-read-next',
   templateUrl: './read-next.component.html',
   styleUrls: ['./read-next.component.scss'],
 })
-export class ReadNextComponent {
+export class ReadNextComponent implements OnInit {
   posts: IPost[] = [];
-  // posts: IPost[] = [
-  //   {
-  //     imgSrc: './../../../../../assets/img/post1.jpg',
-  //     category: 'Startup',
-  //     title: 'Design tips for designers that cover everything you need',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/post2.jpg',
-  //     category: 'Business',
-  //     title: 'How to build rapport with your web design clients',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/post3.jpg',
-  //     category: 'Startup',
-  //     title: 'Logo design trends to avoid in 2022',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  // ];
+
+  constructor(
+    private postsService: PostsService,
+    private randomService: RandomService
+  ) {}
+
+  ngOnInit(): void {
+    this.postsService.getPosts().subscribe((posts) => {
+      const index = this.randomService.getRandomInt(posts.length - 3);
+      this.posts = posts.slice(index, index + 3);
+    });
+  }
 }

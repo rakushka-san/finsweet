@@ -4,11 +4,13 @@
     <div class="content">
       <div class="post" *ngFor="let post of posts">
         <app-recommended-post
-          [imgSrc]="post.imgSrc"
-          [author]="post.author"
+          [imgSrc]="post.imgSrc | static"
+          [authorId]="post.author"
+          [authorName]="post.authorName"
           [date]="post.date"
           [title]="post.title"
           [description]="post.description"
+          [postId]="post._id"
         ></app-recommended-post>
       </div>
     </div>
