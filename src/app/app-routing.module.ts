@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
   { path: 'author/:id', component: AuthorComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'post', component: PostComponent },
+  { path: 'post/:id', component: PostComponent },
   { path: 'category/:id', component: CategoryComponent },
 ];
 

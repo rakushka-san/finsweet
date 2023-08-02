@@ -25,7 +25,7 @@
       <p class="intro">
         {{ featuredPost?.description }}
       </p>
-      <button [routerLink]="'post/' + featuredPost?._id">Read More ></button>
+      <button [routerLink]="['post', featuredPost?._id]">Read More ></button>
     </div>
   </div>
 </section>

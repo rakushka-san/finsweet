@@ -5,8 +5,10 @@
       <div class="posts">
         <div class="item" *ngFor="let post of posts$ | async">
           <app-post
+            [postId]="post._id"
             [imgSrc]="post.imgSrc | static"
             [category]="post.categoryName"
+            [categoryId]="post.category"
             [title]="post.title"
             [description]="post.description"
           ></app-post>

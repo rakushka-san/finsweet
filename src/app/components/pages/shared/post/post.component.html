@@ -1,8 +1,10 @@
 <div class="item">
-    <img [src]="imgSrc" alt="Post Image">
-    <div class="info">
-        <p class="caption">{{ category }}</p>
-        <h3>{{ title }}</h3>
-        <p class="description">{{ description }}</p>
-    </div>
+  <img [src]="imgSrc" alt="Post Image" />
+  <div class="info">
+    <p class="caption" [routerLink]="['/category', categoryId]">
+      {{ category }}
+    </p>
+    <h3 [routerLink]="['/post', postId]">{{ title }}</h3>
+    <p class="description">{{ description }}</p>
+  </div>
 </div>
