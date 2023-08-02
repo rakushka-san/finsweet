@@ -1,4 +1,4 @@
 <label
-  >By <a routerLink="/">{{ author }}</a> |
+  >By <a [routerLink]="['/author', id]">{{ author }}</a> |
   {{ date | date : "MMM dd, yyyy" }}</label
 >

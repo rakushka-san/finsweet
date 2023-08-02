@@ -16,7 +16,7 @@
       <h1>{{ featuredPost?.title }}</h1>
       <p class="info">
         By
-        <a [routerLink]="'author/' + featuredPost?.author">{{
+        <a [routerLink]="['author', featuredPost?.author]">{{
           featuredPost?.authorName
         }}</a>
         |

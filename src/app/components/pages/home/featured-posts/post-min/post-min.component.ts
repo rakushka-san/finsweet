@@ -9,4 +9,5 @@ export class PostMinComponent {
   @Input() title: string = '';
   @Input() author: string = '';
   @Input() date: Date = new Date();
+  @Input() authorId: string = '';
 }

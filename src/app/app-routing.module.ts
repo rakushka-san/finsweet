@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'privacy-policy', component: PrivacyPolicyComponent },
-  { path: 'author', component: AuthorComponent },
+  { path: 'author/:id', component: AuthorComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'post', component: PostComponent },
   { path: 'category/:id', component: CategoryComponent },

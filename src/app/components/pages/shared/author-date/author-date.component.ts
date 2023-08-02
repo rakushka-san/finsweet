@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class AuthorDateComponent {
   @Input() author: string | undefined = 'Unknown';
   @Input() date: Date | undefined = new Date();
+  @Input() id: string | undefined = '';
 }

@@ -20,7 +20,9 @@
               alt="Profile picture"
             />
             <div class="user">
-              <h5>{{ currentTestimonial?.authorName }}</h5>
+              <h5 [routerLink]="['author', currentTestimonial?.author]">
+                {{ currentTestimonial?.authorName }}
+              </h5>
               <p>{{ currentTestimonial?.authorRegion }}</p>
             </div>
           </div>

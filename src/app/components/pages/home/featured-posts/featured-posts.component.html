@@ -7,6 +7,7 @@
         <img [src]="featuredPost?.imgSrc | static" alt="Post Image" />
         <div class="wrapper">
           <app-author-date
+            [id]="featuredPost?.author"
             [author]="featuredPost?.authorName"
             [date]="featuredPost?.date"
           ></app-author-date>
@@ -29,6 +30,7 @@
       <div class="content">
         <app-post-min
           *ngFor="let post of posts"
+          [authorId]="post.author"
           [author]="post.authorName"
           [date]="post.date"
           [title]="post.title"
