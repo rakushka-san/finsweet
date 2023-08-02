@@ -14,6 +14,7 @@ import { SocialsComponent } from './socials/socials.component';
 import { AuthorsListComponent } from './authors-list/authors-list.component';
 
 import { EnvironmentPipe } from './../../../pipes/environment.pipe';
+import { StaticSourcePipe } from './../../../pipes/static-source.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EnvironmentPipe } from './../../../pipes/environment.pipe';
     SocialsComponent,
     AuthorsListComponent,
     EnvironmentPipe,
+    StaticSourcePipe,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
@@ -40,6 +42,7 @@ import { EnvironmentPipe } from './../../../pipes/environment.pipe';
     SocialsComponent,
     AuthorsListComponent,
     EnvironmentPipe,
+    StaticSourcePipe,
   ],
 })
 export class SharedModule {}

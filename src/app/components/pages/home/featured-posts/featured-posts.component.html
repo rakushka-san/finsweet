@@ -4,7 +4,7 @@
       <h3>Featured Post</h3>
 
       <div class="content">
-        <img [src]="('apiUrl' | env) + featuredPost?.imgSrc" alt="Post Image" />
+        <img [src]="featuredPost?.imgSrc | static" alt="Post Image" />
         <div class="wrapper">
           <app-author-date
             [author]="featuredPost?.authorName"
