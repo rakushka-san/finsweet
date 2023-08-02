@@ -9,7 +9,7 @@
     <div class="hero">
       <p class="caption">
         Posted on
-        <span [routerLink]="'category/' + featuredPost?.category">{{
+        <span [routerLink]="['category', featuredPost?.category]">{{
           featuredPost?.categoryName
         }}</span>
       </p>

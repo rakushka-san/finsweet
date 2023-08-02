@@ -13,10 +13,10 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts(author?: string, category?: string): Observable<IPost[]> {
-    const params = new HttpParams();
+    let params = new HttpParams();
 
-    if (author) params.set('author', author);
-    if (category) params.set('category', category);
+    if (author) params = params.set('author', author);
+    if (category) params = params.set('category', category);
 
     return this.http.get<IPost[]>(URL, { params });
   }
