@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
 import { AppRoutingModule } from './../../../app-routing.module';
-import { SharedModule } from '../shared/shared.module';
+import { SharedModule } from './../../shared/shared.module';
 
 import { HomeComponent } from './home.component';
 import { HomeHeroComponent } from './home-hero/home-hero.component';

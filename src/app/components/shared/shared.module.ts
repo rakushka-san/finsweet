@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './../../../app-routing.module';
+import { AppRoutingModule } from './../../app-routing.module';
 
 import { CategoryComponent } from './../shared/categories/category/category.component';
 import { AuthorsComponent } from './../shared/authors/authors.component';
@@ -13,8 +13,8 @@ import { PostComponent } from '../shared/post/post.component';
 import { SocialsComponent } from './socials/socials.component';
 import { AuthorsListComponent } from './authors-list/authors-list.component';
 
-import { EnvironmentPipe } from './../../../pipes/environment.pipe';
-import { StaticSourcePipe } from './../../../pipes/static-source.pipe';
+import { EnvironmentPipe } from './../../pipes/environment.pipe';
+import { StaticSourcePipe } from './../../pipes/static-source.pipe';
 
 @NgModule({
   declarations: [
