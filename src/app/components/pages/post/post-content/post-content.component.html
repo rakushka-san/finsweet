@@ -1,6 +1,6 @@
 <section>
   <div class="container">
-    <img [src]="imgSrc" alt="Post Image" />
+    <img [src]="(post$ | async)?.imgSrc | static" alt="Post Image" />
     <div class="wrapper">
       <article>
         <h3>
