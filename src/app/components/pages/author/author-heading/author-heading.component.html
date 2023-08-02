@@ -2,20 +2,21 @@
   <div class="container">
     <div class="wrapper">
       <div class="content">
-        <img
-          src="./../../../../assets/img/author-photo.jpg"
-          alt="Author Photo"
-        />
+        <img [src]="(author$ | async)?.photoSrc | static" alt="Author Photo" />
         <div class="greeting">
-          <h2>Hey there, I’m Andrew Jonhson and welcome to my Blog</h2>
+          <h2>
+            Hey there, I’m {{ (author$ | async)?.name }} and welcome to my Blog
+          </h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
-            blandit massa enim nec. Scelerisque viverra mauris in aliquam sem.
-            At risus viverra adipiscing at in tellus.
+            {{ (author$ | async)?.blogDescription }}
           </p>
           <div class="socials-wrapper">
-            <app-socials></app-socials>
+            <app-socials
+              [facebookLink]="(author$ | async)?.socials?.facebook"
+              [twitterLink]="(author$ | async)?.socials?.twitter"
+              [instagramLink]="(author$ | async)?.socials?.instagram"
+              [linkedinLink]="(author$ | async)?.socials?.linkedIn"
+            ></app-socials>
           </div>
         </div>
       </div>

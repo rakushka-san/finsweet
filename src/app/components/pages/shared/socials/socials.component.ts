@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./socials.component.scss'],
 })
 export class SocialsComponent {
-  @Input() facebookLink: string = '';
-  @Input() twitterLink: string = '';
-  @Input() instagramLink: string = '';
-  @Input() linkedinLink: string = '';
+  @Input() facebookLink: string | undefined = '';
+  @Input() twitterLink: string | undefined = '';
+  @Input() instagramLink: string | undefined = '';
+  @Input() linkedinLink: string | undefined = '';
 }
