@@ -9,14 +9,7 @@ import { TestimonialsService } from 'src/app/services/testimonials.service';
 })
 export class TestimonialsComponent implements OnInit {
   testimonials: ITestimonial[] = [];
-  currentTestimonial: ITestimonial = {
-    _id: '',
-    text: '',
-    author: '',
-    authorName: '',
-    authorPhoto: '',
-    authorRegion: '',
-  };
+  currentTestimonial: ITestimonial | undefined;
 
   index: number = 0;
 

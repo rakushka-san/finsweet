@@ -11,17 +11,17 @@
       </div>
       <div class="feedback">
         <h5>
-          {{ currentTestimonial.text }}
+          {{ currentTestimonial?.text }}
         </h5>
         <div class="bottom">
           <div class="profile">
             <img
-              [src]="('apiUrl' | env) + currentTestimonial.authorPhoto"
+              [src]="('apiUrl' | env) + currentTestimonial?.authorPhoto"
               alt="Profile picture"
             />
             <div class="user">
-              <h5>{{ currentTestimonial.authorName }}</h5>
-              <p>{{ currentTestimonial.authorRegion }}</p>
+              <h5>{{ currentTestimonial?.authorName }}</h5>
+              <p>{{ currentTestimonial?.authorRegion }}</p>
             </div>
           </div>
           <div class="controls">
