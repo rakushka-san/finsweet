@@ -8,22 +8,7 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./featured-posts.component.scss'],
 })
 export class FeaturedPostsComponent implements OnInit {
-  exampleAuthor = 'John Doe';
-  exampleDate = new Date('2022-05-23');
-  exampleTitle = '8 Figma design systems that you can download for free today.';
-
-  featuredPost: IPost = {
-    _id: '',
-    title: '',
-    description: '',
-    category: '',
-    categoryName: '',
-    author: '',
-    authorName: '',
-    date: new Date(),
-    imgSrc: '',
-    content: '',
-  };
+  featuredPost: IPost | undefined;
   posts: IPost[] = [];
 
   constructor(private postsService: PostsService) {}

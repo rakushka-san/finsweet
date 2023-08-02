@@ -4,20 +4,20 @@
       <h3>Featured Post</h3>
 
       <div class="content">
-        <img [src]="('apiUrl' | env) + featuredPost.imgSrc" alt="Post Image" />
+        <img [src]="('apiUrl' | env) + featuredPost?.imgSrc" alt="Post Image" />
         <div class="wrapper">
           <app-author-date
-            [author]="featuredPost.authorName"
-            [date]="featuredPost.date"
+            [author]="featuredPost?.authorName"
+            [date]="featuredPost?.date"
           ></app-author-date>
         </div>
         <h4>
-          {{ featuredPost.title }}
+          {{ featuredPost?.title }}
         </h4>
         <p>
-          {{ featuredPost.description }}
+          {{ featuredPost?.description }}
         </p>
-        <button [routerLink]="'post/' + featuredPost._id">Read More ></button>
+        <button [routerLink]="'post/' + featuredPost?._id">Read More ></button>
       </div>
     </div>
 
