@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -13,11 +13,12 @@ export class PostsService {
   constructor(private http: HttpClient) {}
 
   getPosts(author?: string, category?: string): Observable<IPost[]> {
-    return this.http.get<IPost[]>(
-      `${URL}?author=${author ? author : ''}&category=${
-        category ? category : ''
-      }`
-    );
+    const params = new HttpParams();
+
+    if (author) params.set('author', author);
+    if (category) params.set('category', category);
+
+    return this.http.get<IPost[]>(URL, { params });
   }
 
   getPost(id: string): Observable<IPost> {
