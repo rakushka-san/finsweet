@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'author', component: AuthorComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'post', component: PostComponent },
-  { path: 'category', component: CategoryComponent },
+  { path: 'category/:id', component: CategoryComponent },
 ];
 
 @NgModule({

@@ -6,13 +6,18 @@ section {
   background-color: $colorLavender;
 }
 
-.container {
+.wrapper {
+  padding: 0 16rem;
   @include flex(center, center);
   flex-direction: column;
 }
 
 p {
   margin-top: 1rem;
+}
+
+.description {
+  text-align: center;
 }
 
 .caption {

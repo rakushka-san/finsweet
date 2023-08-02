@@ -1,7 +1,8 @@
 <div class="content">
   <app-category
     *ngFor="let category of categories"
-    [imgSrc]="('apiUrl' | env) + category.imgSrc"
+    [routerLink]="['category', category._id]"
+    [imgSrc]="category.imgSrc | static"
     [name]="category.name"
     [description]="category.description"
   ></app-category>
