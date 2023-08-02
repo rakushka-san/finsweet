@@ -3,10 +3,10 @@
     <div class="wrapper">
       <h2>My Posts</h2>
       <div class="posts">
-        <div class="item" *ngFor="let post of posts">
+        <div class="item" *ngFor="let post of posts$ | async">
           <app-post
-            [imgSrc]="post.imgSrc"
-            [category]="post.category"
+            [imgSrc]="post.imgSrc | static"
+            [category]="post.categoryName"
             [title]="post.title"
             [description]="post.description"
           ></app-post>

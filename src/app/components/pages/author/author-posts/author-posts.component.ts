@@ -1,31 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, mergeMap, switchMap } from 'rxjs';
 import { IPost } from 'src/app/models/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-author-posts',
   templateUrl: './author-posts.component.html',
   styleUrls: ['./author-posts.component.scss'],
 })
-export class AuthorPostsComponent {
-  posts: IPost[] = [];
-  // posts: IPost[] = [
-  //   {
-  //     imgSrc: './../../../../../assets/img/author-post1.jpg',
-  //     category: 'Business',
-  //     title: 'Font sizes in UI design: The complete guide to follow',
-  //     description:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/author-post2.jpg',
-  //     category: 'Economy',
-  //     title: 'How to build rapport with your web design clients',
-  //     description:
-  //       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  // ];
+export class AuthorPostsComponent implements OnInit {
+  posts$: Observable<IPost[]> | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private postsService: PostsService
+  ) {}
+
+  ngOnInit(): void {
+    this.posts$ = this.route.paramMap.pipe(
+      switchMap((paramMap) => paramMap.getAll('id')),
+      mergeMap((id) => {
+        return this.postsService.getPosts(id);
+      })
+    );
+  }
 }
