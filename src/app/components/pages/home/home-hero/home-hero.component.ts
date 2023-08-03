@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-home-hero',
@@ -10,24 +10,13 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home-hero.component.scss'],
 })
 export class HomeHeroComponent implements OnInit {
-  featuredPost: IPost | undefined;
+  featuredPost$: Observable<IPost> | undefined;
 
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.postsService
-      .getPosts()
-      .pipe(
-        map((value) => {
-          value.forEach((element) => {
-            element.imgSrc = environment.apiUrl + element.imgSrc;
-          });
-
-          return value;
-        })
-      )
-      .subscribe((posts) => {
-        this.featuredPost = posts[0];
-      });
+    this.featuredPost$ = this.postsService
+      .getPosts(1)
+      .pipe(map((value) => value[0]));
   }
 }

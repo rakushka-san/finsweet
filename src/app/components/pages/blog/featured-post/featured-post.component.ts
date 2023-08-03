@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, map } from 'rxjs';
 import { IPost } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -8,13 +9,13 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./featured-post.component.scss'],
 })
 export class FeaturedPostComponent implements OnInit {
-  featuredPost: IPost | undefined;
+  featuredPost$: Observable<IPost> | undefined;
 
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.postsService.getPosts().subscribe((posts) => {
-      this.featuredPost = posts[0];
-    });
+    this.featuredPost$ = this.postsService
+      .getPosts(1)
+      .pipe(map((value) => value[0]));
   }
 }

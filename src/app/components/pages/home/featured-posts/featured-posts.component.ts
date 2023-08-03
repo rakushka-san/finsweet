@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-featured-posts',
@@ -8,15 +10,15 @@ import { PostsService } from 'src/app/services/posts.service';
   styleUrls: ['./featured-posts.component.scss'],
 })
 export class FeaturedPostsComponent implements OnInit {
-  featuredPost: IPost | undefined;
-  posts: IPost[] = [];
+  featuredPost$: Observable<IPost> | undefined;
+  posts$: Observable<IPost[]> | undefined;
 
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.postsService.getPosts().subscribe((posts) => {
-      this.featuredPost = posts[1];
-      this.posts = posts.slice(2, 6);
-    });
+    this.featuredPost$ = this.postsService
+      .getPosts(1, 1)
+      .pipe(map((value) => value[0]));
+    this.posts$ = this.postsService.getPosts(4, 2);
   }
 }

@@ -2,19 +2,24 @@
   <div class="container">
     <div class="content">
       <p class="caption">Featured Post</p>
-      <h3>{{ featuredPost?.title }}</h3>
+      <h3>{{ (featuredPost$ | async)?.title }}</h3>
       <div class="wrapper">
         <app-author-date
-          [author]="featuredPost?.authorName"
-          [id]="featuredPost?.author"
-          [date]="featuredPost?.date"
+          [author]="(featuredPost$ | async)?.authorName"
+          [id]="(featuredPost$ | async)?.author"
+          [date]="(featuredPost$ | async)?.date"
         ></app-author-date>
       </div>
       <p class="intro">
-        {{ featuredPost?.description }}
+        {{ (featuredPost$ | async)?.description }}
       </p>
-      <button [routerLink]="['/post', featuredPost?._id]">Read More ></button>
+      <button [routerLink]="['/post', (featuredPost$ | async)?._id]">
+        Read More >
+      </button>
     </div>
-    <img [src]="featuredPost?.imgSrc | static" alt="Featured Post Image" />
+    <img
+      [src]="(featuredPost$ | async)?.imgSrc | static"
+      alt="Featured Post Image"
+    />
   </div>
 </section>

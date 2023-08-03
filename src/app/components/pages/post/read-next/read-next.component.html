@@ -2,7 +2,7 @@
   <div class="container">
     <h3>What to read next</h3>
     <div class="content">
-      <div class="post" *ngFor="let post of posts">
+      <div class="post" *ngFor="let post of posts$ | async">
         <app-recommended-post
           [imgSrc]="post.imgSrc | static"
           [authorId]="post.author"

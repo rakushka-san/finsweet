@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/models/post';
 import { PostsService } from 'src/app/services/posts.service';
 import { RandomService } from 'src/app/services/random.service';
+import { Observable } from 'rxjs';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-read-next',
@@ -9,7 +11,7 @@ import { RandomService } from 'src/app/services/random.service';
   styleUrls: ['./read-next.component.scss'],
 })
 export class ReadNextComponent implements OnInit {
-  posts: IPost[] = [];
+  posts$: Observable<IPost[]> | undefined;
 
   constructor(
     private postsService: PostsService,
@@ -17,9 +19,14 @@ export class ReadNextComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.postsService.getPosts().subscribe((posts) => {
-      const index = this.randomService.getRandomInt(posts.length - 3);
-      this.posts = posts.slice(index, index + 3);
-    });
+    this.postsService
+      .getPostsCount()
+      .pipe(first())
+      .subscribe((count) => {
+        this.posts$ = this.postsService.getPosts(
+          3,
+          this.randomService.getRandomInt(count - 3)
+        );
+      });
   }
 }
