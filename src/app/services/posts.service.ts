@@ -12,6 +12,10 @@ const URL = `${environment.apiUrl}posts`;
 export class PostsService {
   constructor(private http: HttpClient) {}
 
+  getPostsCount(): Observable<number> {
+    return this.http.get<number>(`${URL}/count`);
+  }
+
   getPosts(
     limit?: number,
     skip?: number,

@@ -1,58 +1,53 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { BehaviorSubject, Observable, first, map } from 'rxjs';
 import { IPost } from 'src/app/models/post';
+import { PostsService } from 'src/app/services/posts.service';
 
 @Component({
   selector: 'app-all-posts',
   templateUrl: './all-posts.component.html',
   styleUrls: ['./all-posts.component.scss'],
 })
-export class AllPostsComponent {
-  posts: IPost[] = [];
-  // posts: IPost[] = [
-  //   {
-  //     imgSrc: './../../../../../assets/img/post1.jpg',
-  //     category: 'Startup',
-  //     title: 'Design tips for designers that cover everything you need',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/post2.jpg',
-  //     category: 'Business',
-  //     title: 'How to build rapport with your web design clients',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/post3.jpg',
-  //     category: 'Startup',
-  //     title: 'Logo design trends to avoid in 2022',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/post4.jpg',
-  //     category: 'Technology',
-  //     title: '8 Figma design systems you can download for free today',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  //   {
-  //     imgSrc: './../../../../../assets/img/post1.jpg',
-  //     category: 'Economy',
-  //     title: 'Font sizes in UI design: The complete guide to follow',
-  //     description:
-  //       'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.',
-  //     author: 'John Doe',
-  //     date: new Date(),
-  //   },
-  // ];
+export class AllPostsComponent implements OnInit {
+  @ViewChild('postsContainer') postsContainer:
+    | ElementRef<HTMLDivElement>
+    | undefined;
+
+  posts$: Observable<IPost[]> | undefined;
+  page$: BehaviorSubject<number> = new BehaviorSubject(1);
+  totalPages$: Observable<number> | undefined;
+  size: number = 5;
+
+  constructor(private postsService: PostsService) {}
+
+  ngOnInit(): void {
+    this.totalPages$ = this.postsService.getPostsCount().pipe(
+      first(),
+      map((count) => Math.ceil(count / this.size))
+    );
+    this.page$.subscribe((page) => {
+      this.posts$ = this.postsService.getPosts(
+        this.size,
+        (page - 1) * this.size
+      );
+    });
+  }
+
+  onPrevPage(): void {
+    const currentPage = this.page$.value;
+    if (currentPage !== 1) this.page$.next(currentPage - 1);
+    this.scrollToTop();
+  }
+
+  onNextPage(): void {
+    this.totalPages$?.subscribe((totalPages) => {
+      const currentPage = this.page$.value;
+      if (currentPage !== totalPages) this.page$.next(currentPage + 1);
+    });
+    this.scrollToTop();
+  }
+
+  scrollToTop(): void {
+    this.postsContainer?.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }
 }

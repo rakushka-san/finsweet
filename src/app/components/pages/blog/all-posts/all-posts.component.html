@@ -1,19 +1,21 @@
 <section>
   <div class="container">
     <h2>All Posts</h2>
-    <div class="content">
-      <div class="item" *ngFor="let post of posts">
+    <div #postsContainer class="content">
+      <div class="item" *ngFor="let post of posts$ | async">
         <app-post
-          [imgSrc]="post.imgSrc"
-          [category]="post.category"
+          [imgSrc]="post.imgSrc | static"
+          [category]="post.categoryName"
+          [categoryId]="post.category"
           [title]="post.title"
+          [postId]="post._id"
           [description]="post.description"
         ></app-post>
       </div>
     </div>
     <div class="controls">
-        <h5>< Prev</h5>
-        <h4>Next ></h4>
+      <h5 (click)="onPrevPage()">&lt; Prev</h5>
+      <h4 (click)="onNextPage()">Next &gt;</h4>
     </div>
   </div>
 </section>
