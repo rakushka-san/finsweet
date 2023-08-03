@@ -12,9 +12,16 @@ const URL = `${environment.apiUrl}posts`;
 export class PostsService {
   constructor(private http: HttpClient) {}
 
-  getPosts(author?: string, category?: string): Observable<IPost[]> {
+  getPosts(
+    limit?: number,
+    skip?: number,
+    author?: string,
+    category?: string
+  ): Observable<IPost[]> {
     let params = new HttpParams();
 
+    if (limit) params = params.set('limit', limit);
+    if (skip) params = params.set('skip', skip);
     if (author) params = params.set('author', author);
     if (category) params = params.set('category', category);
 

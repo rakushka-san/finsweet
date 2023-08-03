@@ -25,7 +25,9 @@ export class CategoryContentComponent implements OnInit {
   ngOnInit(): void {
     this.posts = this.route.paramMap.pipe(
       switchMap((paramMap) => paramMap.getAll('id')),
-      mergeMap((id) => this.postsService.getPosts(undefined, id))
+      mergeMap((id) =>
+        this.postsService.getPosts(undefined, undefined, undefined, id)
+      )
     );
   }
 

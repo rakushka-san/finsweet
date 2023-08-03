@@ -21,7 +21,7 @@ export class AuthorPostsComponent implements OnInit {
     this.posts$ = this.route.paramMap.pipe(
       switchMap((paramMap) => paramMap.getAll('id')),
       mergeMap((id) => {
-        return this.postsService.getPosts(id);
+        return this.postsService.getPosts(undefined, undefined, id);
       })
     );
   }
