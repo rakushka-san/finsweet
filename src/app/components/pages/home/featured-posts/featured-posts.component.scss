@@ -47,4 +47,8 @@
   .heading {
     @include flex(space-between, center);
   }
+
+  app-post-min {
+    cursor: pointer;
+  }
 }

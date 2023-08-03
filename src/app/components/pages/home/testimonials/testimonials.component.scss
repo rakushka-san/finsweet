@@ -47,6 +47,10 @@
     .user {
       margin-left: 1rem;
     }
+
+    h5 {
+      cursor: pointer;
+    }
   }
 
   .controls {
@@ -54,6 +58,10 @@
 
     .back {
       margin-left: 1.5rem;
+    }
+
+    & > * {
+      cursor: pointer;
     }
   }
 }
