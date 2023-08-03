@@ -2,23 +2,19 @@
   <div class="container">
     <div class="content">
       <p class="caption">Featured Post</p>
-      <h3>Step-by-step guide to choosing great font pairs</h3>
+      <h3>{{ featuredPost?.title }}</h3>
       <div class="wrapper">
         <app-author-date
-          [author]="exampleAuthor"
-          [date]="exampleDate"
+          [author]="featuredPost?.authorName"
+          [id]="featuredPost?.author"
+          [date]="featuredPost?.date"
         ></app-author-date>
       </div>
       <p class="intro">
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident.
+        {{ featuredPost?.description }}
       </p>
-      <button>Read More ></button>
+      <button [routerLink]="['/post', featuredPost?._id]">Read More ></button>
     </div>
-    <img
-      src="./../../../../assets/img/featured_post.jpg"
-      alt="Featured Post Image"
-    />
+    <img [src]="featuredPost?.imgSrc | static" alt="Featured Post Image" />
   </div>
 </section>

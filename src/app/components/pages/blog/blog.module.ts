@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BlogComponent } from './blog.component';
+import { RouterModule } from '@angular/router';
 
 import { SharedModule } from './../../shared/shared.module';
 
+import { BlogComponent } from './blog.component';
 import { FeaturedPostComponent } from './featured-post/featured-post.component';
 import { AllPostsComponent } from './all-posts/all-posts.component';
 import { AllCategoriesComponent } from './all-categories/all-categories.component';
@@ -15,6 +16,6 @@ import { AllCategoriesComponent } from './all-categories/all-categories.componen
     AllPostsComponent,
     AllCategoriesComponent,
   ],
-  imports: [CommonModule, SharedModule],
+  imports: [CommonModule, RouterModule, SharedModule],
 })
 export class BlogModule {}
