@@ -9,28 +9,63 @@
       </p>
       <div class="info">
         <div class="column">
-            <p class="heading">Working hours</p>
-            <h5>Monday To Friday<br>9:00 AM to 8:00 PM </h5>
-            <p>Our Support Team is available 24/7</p>
+          <p class="heading">Working hours</p>
+          <h5>Monday To Friday<br />9:00 AM to 8:00 PM</h5>
+          <p>Our Support Team is available 24/7</p>
         </div>
         <div class="column">
-            <p class="heading">Contact us</p>
-            <h5>020 7993 2905</h5>
-            <p>hello@finsweet.com</p>
+          <p class="heading">Contact us</p>
+          <h5>020 7993 2905</h5>
+          <p>hello@finsweet.com</p>
         </div>
       </div>
-      <form>
+      <form [formGroup]="contactForm" (ngSubmit)="onContactSubmit()">
         <div class="inputs">
-            <input type="text" placeholder="Full Name">
-            <input type="email" placeholder="Your Email">
-            <select placeholder="Query Related">
-                <option>Query 1</option>
-                <option>Query 2</option>
-            </select>
-            <textarea cols="30" rows="10" placeholder="Message"></textarea>
+          <input type="text" placeholder="Full Name" formControlName="name" />
+          <p
+            *ngIf="
+              contactForm.controls['name'].invalid &&
+              contactForm.controls['name'].touched
+            "
+          >
+            Invalid Name
+          </p>
+          <input
+            type="email"
+            placeholder="Your Email"
+            formControlName="email"
+          />
+          <p
+            *ngIf="
+              contactForm.controls['email'].invalid &&
+              contactForm.controls['email'].touched
+            "
+          >
+            Invalid Email
+          </p>
+          <select placeholder="Query Related" formControlName="query">
+            <option *ngFor="let query of contactQueries">{{ query }}</option>
+          </select>
+          <p *ngIf="contactForm.controls['query'].invalid">Choose Query</p>
+          <textarea
+            cols="30"
+            rows="10"
+            placeholder="Message"
+            formControlName="message"
+          ></textarea>
+          <p
+            *ngIf="
+              contactForm.controls['message'].invalid &&
+              contactForm.controls['message'].touched
+            "
+          >
+            Message Is Too Short
+          </p>
         </div>
-        <button>Send Message</button>
+
+        <button [disabled]="contactForm.invalid">Send Message</button>
       </form>
+      <p [ngClass]="{ error: error }">{{ status }}</p>
     </div>
   </div>
 </section>

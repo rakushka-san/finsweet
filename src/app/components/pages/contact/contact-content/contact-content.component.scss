@@ -5,6 +5,15 @@
   padding: 0 16rem;
   @include flex(center, center);
   flex-direction: column;
+
+  & > p {
+    margin-top: 1rem;
+    text-align: center;
+
+    .error {
+      color: $colorRed;
+    }
+  }
 }
 
 .caption {
@@ -54,7 +63,9 @@ form {
   flex-direction: column;
   width: 100%;
 
-  .inputs > * {
+  .inputs > input,
+  select,
+  textarea {
     margin-top: 1rem;
     padding: 1.5rem;
     width: 100%;
@@ -75,6 +86,13 @@ form {
 
     &:first-child {
       margin-top: 0;
+    }
+  }
+
+  .inputs {
+    width: 100%;
+    p {
+      color: $colorRed;
     }
   }
 
