@@ -1,5 +1,5 @@
-@import "./../../../../../assets/scss/mixins";
-@import "./../../../../../assets/scss/colors";
+@import "./../../../../../scss/mixins";
+@import "./../../../../../scss/colors";
 
 .item {
   @include flex(center, center);

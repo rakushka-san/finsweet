@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        console.log('navigation end');
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     });
