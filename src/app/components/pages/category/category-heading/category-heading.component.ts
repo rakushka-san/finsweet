@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { mergeMap, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
+import { mergeMap, switchMap } from 'rxjs/operators';
 import { ICategory } from 'src/app/models/category';
 import { CategoriesService } from 'src/app/services/categories.service';
 
@@ -10,7 +11,7 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./category-heading.component.scss'],
 })
 export class CategoryHeadingComponent implements OnInit {
-  category: ICategory | undefined;
+  category$: Observable<ICategory> | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,13 +19,9 @@ export class CategoryHeadingComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap
-      .pipe(
-        switchMap((params) => params.getAll('id')),
-        mergeMap((id) => this.categoriesService.getCategory(id))
-      )
-      .subscribe((category) => {
-        this.category = category;
-      });
+    this.category$ = this.route.paramMap.pipe(
+      switchMap((params) => params.getAll('id')),
+      mergeMap((id) => this.categoriesService.getCategory(id))
+    );
   }
 }

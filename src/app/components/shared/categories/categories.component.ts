@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
 import { ICategory } from 'src/app/models/category';
 import { CategoriesService } from 'src/app/services/categories.service';
 
@@ -9,13 +9,11 @@ import { CategoriesService } from 'src/app/services/categories.service';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-  categories: ICategory[] = [];
+  categories$: Observable<ICategory[]> | undefined;
 
   constructor(private categoriesService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.categoriesService.getCategories().subscribe((categories) => {
-      this.categories = categories;
-    });
+    this.categories$ = this.categoriesService.getCategories();
   }
 }

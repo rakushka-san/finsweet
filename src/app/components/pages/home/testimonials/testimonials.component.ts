@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ITestimonial } from 'src/app/models/testimonial';
 import { TestimonialsService } from 'src/app/services/testimonials.service';
+import { first } from 'rxjs/operators';
 
 @Component({
   selector: 'app-testimonials',
@@ -16,10 +17,13 @@ export class TestimonialsComponent implements OnInit {
   constructor(private testimonialsService: TestimonialsService) {}
 
   ngOnInit(): void {
-    this.testimonialsService.getTestimonials().subscribe((testimonials) => {
-      this.testimonials = testimonials;
-      this.updateTestimonial();
-    });
+    this.testimonialsService
+      .getTestimonials()
+      .pipe(first())
+      .subscribe((testimonials) => {
+        this.testimonials = testimonials;
+        this.updateTestimonial();
+      });
   }
 
   onBack(): void {

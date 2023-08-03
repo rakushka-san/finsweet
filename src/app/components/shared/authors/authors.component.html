@@ -1,6 +1,6 @@
 <div class="content">
   <app-author
-    *ngFor="let author of authors"
+    *ngFor="let author of authors$ | async"
     [routerLink]="['/author', author._id]"
     [imgSrc]="('apiUrl' | env) + author.photoSrc"
     [name]="author.name"

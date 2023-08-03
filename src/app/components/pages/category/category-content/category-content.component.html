@@ -1,7 +1,7 @@
 <section>
   <div class="container">
     <div>
-      <div class="item" *ngFor="let post of posts | async">
+      <div class="item" *ngFor="let post of posts$ | async">
         <app-post
           [postId]="post._id"
           [imgSrc]="post.imgSrc | static"
@@ -16,7 +16,7 @@
       <div class="categories">
         <h3>Categories</h3>
         <div class="categories-container">
-          <div class="category" *ngFor="let category of categories | async">
+          <div class="category" *ngFor="let category of categories$ | async">
             <app-category-item
               [routerLink]="['/category', category._id]"
               [imgSrc]="category.imgSrc | static"

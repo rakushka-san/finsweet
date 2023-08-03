@@ -1,10 +1,10 @@
 <section>
   <div class="container">
     <div class="wrapper">
-      <h1>{{ category?.name }}</h1>
-      <p class="description">{{ category?.description }}</p>
+      <h1>{{ (category$ | async)?.name }}</h1>
+      <p class="description">{{ (category$ | async)?.description }}</p>
       <p class="caption">
-        <span routerLink="/blog">Blog</span> > {{ category?.name }}
+        <span routerLink="/blog">Blog</span> > {{ (category$ | async)?.name }}
       </p>
     </div>
   </div>

@@ -13,8 +13,8 @@ import { Observable, mergeMap, switchMap } from 'rxjs';
   styleUrls: ['./category-content.component.scss'],
 })
 export class CategoryContentComponent implements OnInit {
-  posts: Observable<IPost[]> | undefined;
-  categories: Observable<ICategory[]> = this.categoriesService.getCategories();
+  posts$: Observable<IPost[]> | undefined;
+  categories$: Observable<ICategory[]> | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +23,8 @@ export class CategoryContentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.posts = this.route.paramMap.pipe(
+    this.categories$ = this.categoriesService.getCategories();
+    this.posts$ = this.route.paramMap.pipe(
       switchMap((paramMap) => paramMap.getAll('id')),
       mergeMap((id) =>
         this.postsService.getPosts(undefined, undefined, undefined, id)
