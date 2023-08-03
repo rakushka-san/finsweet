@@ -14,10 +14,17 @@
     </div>
     <div class="subscribe">
       <h3>Subscribe to our news letter to get latest updates and news</h3>
-      <form>
-        <input type="text" placeholder="Enter Your Email" />
-        <button>Subscribe</button>
-      </form>
+      <div>
+        <form [formGroup]="subscriptionForm" (ngSubmit)="onSubmit()">
+          <input
+            type="text"
+            placeholder="Enter Your Email"
+            formControlName="email"
+          />
+          <button [disabled]="subscriptionForm.invalid">Subscribe</button>
+        </form>
+        <p [ngClass]="{ error: error }">{{ status }}</p>
+      </div>
     </div>
     <div class="contacts">
       <div>
