@@ -1,4 +1,4 @@
-# DiveSea
+# Finsweet
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 
@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Production server
+
+Run `docker build -t finsweet-image .` to build docker image. Run `docker run -d -p 4000:80 --name finsweet finsweet-image:latest` to run docker container. Navigate to `http://localhost:4000/`. You can also setup the backend part of application: [Finsweet API](https://github.com/rakushka-san/finsweet-api).
+
+## Sample Data
+
+Run `node fill-db.js` in container terminal to fill database with sample data
